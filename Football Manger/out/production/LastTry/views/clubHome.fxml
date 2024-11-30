@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorpan" prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.clubHomeController">
+   <children>
+      <BorderPane layoutX="362.0" layoutY="138.0" prefHeight="650.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <HBox prefHeight="150.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="150.0" prefWidth="320.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="320.0">
+                           <children>
+                              <Label prefHeight="42.0" prefWidth="146.0" styleClass="shadow" text="FootBall">
+                                 <font>
+                                    <Font name="Eras Demi ITC" size="35.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="13.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label layoutX="97.0" layoutY="27.0" prefHeight="42.0" prefWidth="146.0" styleClass="shadow" text="Manager">
+                                 <font>
+                                    <Font name="Eras Light ITC" size="35.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" stylesheets="@../values/style.css">
+                           <children>
+                              <JFXHamburger fx:id="hamBurger" cache="true" cacheHint="SCALE_AND_ROTATE" styleClass="shadow">
+                                 <HBox.margin>
+                                    <Insets left="25.0" />
+                                 </HBox.margin>
+                              </JFXHamburger>
+                              <Label styleClass="shadow" text="Search Options">
+                                 <font>
+                                    <Font name="Eras Medium ITC" size="30.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="15.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="2.0" left="5.0" right="5.0" top="2.0" />
+                           </VBox.margin>
+                           <styleClass>
+                              <String fx:value="search-box" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                        </HBox>
+                        <HBox fx:id="mySearchBox" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="320.0" stylesheets="@../values/style.css">
+                           <children>
+                              <TextField prefHeight="34.0" prefWidth="215.0">
+                                 <stylesheets>
+                                    <URL value="@../values/style.css" />
+                                    <URL value="@../values/anotherStyle.css" />
+                                 </stylesheets>
+                                 <styleClass>
+                                    <String fx:value="transparent" />
+                                    <String fx:value="text-line" />
+                                 </styleClass>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <JFXButton fx:id="searchButton" onAction="#searchButtonAction" prefHeight="32.0" prefWidth="60.0" stylesheets="@../values/style.css" text="Search" textFill="WHITE">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                                 <styleClass>
+                                    <String fx:value="search-button" />
+                                    <String fx:value="submitButton" />
+                                 </styleClass>
+                              </JFXButton>
+                           </children>
+                           <styleClass>
+                              <String fx:value="shadow" />
+                              <String fx:value="search-box" />
+                           </styleClass>
+                           <VBox.margin>
+                              <Insets bottom="2.0" left="5.0" right="5.0" top="2.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="150.0" prefWidth="579.0">
+                     <children>
+                        <Label fx:id="clubHeading" alignment="CENTER" prefHeight="122.0" prefWidth="579.0" styleClass="shadow" text="Manchaster United">
+                           <font>
+                              <Font name="Eras Demi ITC" size="60.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Label>
+                        <HBox prefHeight="51.0" prefWidth="579.0">
+                           <children>
+                              <JFXButton fx:id="homeButton" alignment="BOTTOM_LEFT" onAction="#homeButtonAction" prefHeight="50.0" prefWidth="190.0" style="-fx-border-radius: 15; -fx-border-color: #828282; -fx-background-radius: 15;" text="Home" textFill="#585858">
+                                 <graphic>
+                                    <ImageView fitHeight="33.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/dash1.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Eras Medium ITC" size="17.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="3.0" />
+                                 </HBox.margin>
+                                 <styleClass>
+                                    <String fx:value="menuItem" />
+                                    <String fx:value="shadow" />
+                                 </styleClass></JFXButton>
+                              <JFXButton alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="190.0" style="-fx-border-color: #828282; -fx-border-radius: 15; -fx-background-radius: 15;" text="Market" textFill="#585858">
+                                 <graphic>
+                                    <ImageView fitHeight="33.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/ic_cart.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Eras Medium ITC" size="17.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="menuItem" />
+                                    <String fx:value="shadow" />
+                                 </styleClass></JFXButton>
+                              <JFXButton fx:id="logOut" alignment="BOTTOM_LEFT" layoutX="200.0" layoutY="10.0" onAction="#logOutAction" prefHeight="50.0" prefWidth="190.0" style="-fx-border-color: #828282; -fx-border-radius: 15; -fx-background-radius: 15;" text="Log out" textFill="#585858">
+                                 <graphic>
+                                    <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/Untitled.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Eras Medium ITC" size="17.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="menuItem" />
+                                    <String fx:value="shadow" />
+                                 </styleClass></JFXButton>
+                           </children></HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin></HBox>
+         </top>
+         <left>
+            <VBox prefHeight="492.0" prefWidth="320.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox fx:id="chosenPlayerCard" prefHeight="474.0" prefWidth="260.0" style="-fx-background-color: #D3D3D3; -fx-background-radius: 15;" styleClass="my-shadow" stylesheets="@../values/style.css">
+                     <children>
+                        <HBox prefHeight="42.0" prefWidth="282.0">
+                           <children>
+                              <Label fx:id="playerNameLabel" alignment="CENTER" prefHeight="40.0" prefWidth="283.0" style="-fx-background-color: #828282; -fx-background-radius: 15;" text="name" textFill="WHITE">
+                                 <font>
+                                    <Font name="Eras Light ITC" size="21.0" />
+                                 </font></Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="158.0" prefWidth="242.0" styleClass="shadow" stylesheets="@../values/style.css">
+                           <children>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/player-icon.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets bottom="3.0" left="5.0" right="5.0" top="3.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="32.0" prefWidth="150.0" spacing="1.0">
+                           <children>
+                              <Label fx:id="playerCountryLabel1" alignment="CENTER" layoutX="10.0" layoutY="11.0" prefHeight="30.0" prefWidth="252.0" style="-fx-background-color: #828282; -fx-background-radius: 0;" text="Country  " textFill="WHITE">
+                                 <font>
+                                    <Font name="Eras Medium ITC" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="1.0" top="1.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="playerCountryLabel" alignment="CENTER" prefHeight="30.0" prefWidth="252.0" style="-fx-background-color: #828282; -fx-background-radius: 0;" text="country" textFill="WHITE">
+                                 <HBox.margin>
+                                    <Insets bottom="1.0" top="1.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="Eras Medium ITC" size="15.0" />
+                                 </font></Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="52.0" prefHeight="32.0" prefWidth="150.0">
+                           <children>
+                              <Label fx:id="playerAgeLabel1" alignment="CENTER" layoutX="10.0" layoutY="11.0" prefHeight="30.0" prefWidth="260.0" style="-fx-background-color: #828282; -fx-background-radius: 0;" text="Age" textFill="WHITE">
+                                 <font>
+                                    <Font name="Eras Medium ITC" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="1.0" top="1.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="playerAgeLabel" alignment="CENTER" prefHeight="30.0" prefWidth="260.0" style="-fx-background-color: #828282; -fx-background-radius: 0;" text="Age" textFill="WHITE">
+                                 <font>
+                                    <Font name="Eras Medium ITC" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="1.0" top="1.0" />
+                                 </HBox.margin></Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="95.0" prefHeight="32.0" prefWidth="150.0">
+                           <children>
+                              <Label fx:id="playerHeightLabel1" alignment="CENTER" layoutX="10.0" layoutY="11.0" prefHeight="53.0" prefWidth="260.0" style="-fx-background-color: #828282; -fx-background-radius: 0;" text="Height" textFill="WHITE">
+                                 <font>
+                                    <Font name="Eras Medium ITC" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="1.0" top="1.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="playerHeightLabel" alignment="CENTER" prefHeight="53.0" prefWidth="260.0" style="-fx-background-color: #828282; -fx-background-radius: 0;" text="Height" textFill="WHITE">
+                                 <HBox.margin>
+                                    <Insets bottom="1.0" top="1.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="Eras Medium ITC" size="15.0" />
+                                 </font></Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="137.0" prefHeight="32.0" prefWidth="150.0">
+                           <children>
+                              <Label fx:id="playerClubLabel1" alignment="CENTER" prefHeight="30.0" prefWidth="268.0" style="-fx-background-color: #828282; -fx-background-radius: 0;" text="Club" textFill="WHITE">
+                                 <font>
+                                    <Font name="Eras Medium ITC" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="1.0" top="1.0" />
+                                 </HBox.margin></Label>
+                              <Label fx:id="playerClubLabel" alignment="CENTER" layoutX="10.0" layoutY="11.0" prefHeight="30.0" prefWidth="268.0" style="-fx-background-color: #828282; -fx-background-radius: 0;" text="Club" textFill="WHITE">
+                                 <font>
+                                    <Font name="Eras Medium ITC" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="1.0" top="1.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="180.0" prefHeight="32.0" prefWidth="260.0" spacing="1.0">
+                           <children>
+                              <Label fx:id="playerPositionLabel1" alignment="CENTER" layoutX="9.0" layoutY="11.0" prefHeight="30.0" prefWidth="274.0" style="-fx-background-color: #828282;" text="Position" textFill="WHITE">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="1.0" top="1.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="playerPositionLabel" alignment="CENTER" prefHeight="30.0" prefWidth="274.0" style="-fx-background-color: #828282;" text="Position" textFill="WHITE">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="1.0" top="1.0" />
+                                 </HBox.margin></Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="222.0" prefHeight="32.0" prefWidth="150.0" spacing="1.0">
+                           <children>
+                              <Label fx:id="playerNumberLabel1" alignment="CENTER" layoutX="9.0" layoutY="11.0" prefHeight="30.0" prefWidth="283.0" style="-fx-background-color: #828282;" text="Number" textFill="WHITE">
+                                 <font>
+                                    <Font name="Eras Medium ITC" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="1.0" top="1.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="playerNumberLabel" alignment="CENTER" prefHeight="30.0" prefWidth="283.0" style="-fx-background-color: #828282;" text="Number" textFill="WHITE">
+                                 <font>
+                                    <Font name="Eras Medium ITC" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="1.0" top="1.0" />
+                                 </HBox.margin></Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="264.0" prefHeight="32.0" prefWidth="150.0" spacing="1.0">
+                           <children>
+                              <Label fx:id="playerWSLabel1" alignment="CENTER" layoutX="9.0" layoutY="10.0" prefHeight="30.0" prefWidth="283.0" style="-fx-background-color: #828282;" text="Weekly Salary" textFill="WHITE">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="1.0" top="1.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="playerWSLabel" alignment="CENTER" prefHeight="30.0" prefWidth="283.0" style="-fx-background-color: #828282;" text="Weekly Salary" textFill="WHITE">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="1.0" top="1.0" />
+                                 </HBox.margin></Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="260.0">
+                           <children>
+                              <JFXButton prefHeight="35.0" prefWidth="260.0" stylesheets="@../values/anotherStyle.css" text="Sell" textFill="WHITE">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="search-button" />
+                                    <String fx:value="submitButton" />
+                                 </styleClass></JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="30.0" right="30.0" top="15.0" />
+                     </VBox.margin>
+                  </VBox>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="550.0" style="-fx-background-color: #828282; -fx-background-radius: 15;">
+                     <children>
+                        <Label fx:id="caption" text="All Players" textFill="WHITE">
+                           <font>
+                              <Font name="Eras Medium ITC" size="35.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="3.0" right="3.0" top="10.0" />
+                     </VBox.margin></HBox>
+                  <HBox alignment="CENTER" prefHeight="492.0" prefWidth="474.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <ScrollPane fx:id="scroll" prefHeight="456.0" prefWidth="568.0" styleClass="transparent" stylesheets="@../values/style.css">
+                           <content>
+                              <GridPane fx:id="grid">
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                              </GridPane>
+                           </content>
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin>
+                        </ScrollPane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+      <AnchorPane fx:id="slider" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="580.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <VBox layoutX="91.0" layoutY="33.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #D3D3D3; -fx-background-radius: 15;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="270.0" prefWidth="320.0">
+                     <children>
+                        <JFXButton fx:id="byNameButton" alignment="TOP_LEFT" nodeOrientation="LEFT_TO_RIGHT" onAction="#byNameButtonAction" prefHeight="56.0" prefWidth="320.0" stylesheets="@../values/style.css" text="By Name" textFill="#585858">
+                           <font>
+                              <Font name="Eras Medium ITC" size="17.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                                 <image>
+                                    <Image url="@../images/sticker_ballon_football.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="sidebarItem" />
+                              <String fx:value="shadow" />
+                           </styleClass></JFXButton>
+                        <JFXButton fx:id="byCountryButton" alignment="TOP_LEFT" layoutX="10.0" layoutY="10.0" onAction="#byCountryButtonAction" prefHeight="56.0" prefWidth="320.0" text="By Country" textFill="#585858">
+                           <font>
+                              <Font name="Eras Medium ITC" size="17.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                                 <image>
+                                    <Image url="@../images/sticker_ballon_football.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="sidebarItem" />
+                              <String fx:value="shadow" />
+                           </styleClass></JFXButton>
+                        <JFXButton fx:id="byPositionButton" alignment="TOP_LEFT" layoutX="10.0" layoutY="66.0" onAction="#byPositionButtonAction" prefHeight="56.0" prefWidth="320.0" text="By Position" textFill="#585858">
+                           <font>
+                              <Font name="Eras Medium ITC" size="17.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                                 <image>
+                                    <Image url="@../images/sticker_ballon_football.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="sidebarItem" />
+                              <String fx:value="shadow" />
+                           </styleClass></JFXButton>
+                        <JFXButton fx:id="bySalaryRangeButton" alignment="TOP_LEFT" layoutX="10.0" layoutY="122.0" onAction="#bySalaryRangeButtonAction" prefHeight="56.0" prefWidth="320.0" text="By Salary Range" textFill="#585858">
+                           <font>
+                              <Font name="Eras Medium ITC" size="17.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                                 <image>
+                                    <Image url="@../images/sticker_ballon_football.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="sidebarItem" />
+                              <String fx:value="shadow" />
+                           </styleClass></JFXButton>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </VBox>
+                  <VBox prefHeight="330.0" prefWidth="320.0">
+                     <children>
+                        <JFXButton fx:id="maxSalarySearch" alignment="TOP_LEFT" onAction="#maxSalarySearchAction" prefHeight="56.0" prefWidth="320.0" text="Max Salary" textFill="#585858">
+                           <font>
+                              <Font name="Eras Medium ITC" size="17.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                                 <image>
+                                    <Image url="@../images/sticker_ballon_football.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="sidebarItem" />
+                              <String fx:value="shadow" />
+                           </styleClass></JFXButton>
+                        <JFXButton fx:id="maxAgeSearch" alignment="TOP_LEFT" layoutX="10.0" layoutY="10.0" onAction="#maxAgeSearchAction" prefHeight="56.0" prefWidth="320.0" text="Max Age " textFill="#585858">
+                           <font>
+                              <Font name="Eras Medium ITC" size="17.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                                 <image>
+                                    <Image url="@../images/sticker_ballon_football.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="sidebarItem" />
+                              <String fx:value="shadow" />
+                           </styleClass></JFXButton>
+                        <JFXButton fx:id="maxHeightSearch" alignment="TOP_LEFT" layoutX="10.0" layoutY="61.0" onAction="#maxHeightSearchAction" prefHeight="56.0" prefWidth="320.0" text="Max Height" textFill="#585858">
+                           <font>
+                              <Font name="Eras Medium ITC" size="17.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                                 <image>
+                                    <Image url="@../images/sticker_ballon_football.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="sidebarItem" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                        </JFXButton>
+                        <JFXButton fx:id="totalSalarySearch" alignment="TOP_LEFT" layoutX="10.0" layoutY="112.0" onAction="#totalSalarySearchAction" prefHeight="56.0" prefWidth="320.0" text="Total Salary" textFill="#585858">
+                           <font>
+                              <Font name="Eras Medium ITC" size="17.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                                 <image>
+                                    <Image url="@../images/sticker_ballon_football.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="sidebarItem" />
+                              <String fx:value="shadow" />
+                           </styleClass></JFXButton>
+                        <JFXButton fx:id="CountryWisePlayerSearch" alignment="TOP_LEFT" layoutX="10.0" layoutY="164.0" onAction="#CountryWisePlayerSearchAction" prefHeight="56.0" prefWidth="320.0" text="Country wise player Count" textFill="#585858">
+                           <font>
+                              <Font name="Eras Medium ITC" size="17.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                                 <image>
+                                    <Image url="@../images/sticker_ballon_football.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="sidebarItem" />
+                              <String fx:value="shadow" />
+                           </styleClass></JFXButton>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <AnchorPane fx:id="totalSalaryPane" layoutY="321.0" prefHeight="56.0" prefWidth="320.0" visible="false" AnchorPane.bottomAnchor="90.0">
+               <children>
+                  <Label fx:id="totalSalaryResults" alignment="CENTER" layoutX="60.0" layoutY="7.0" prefHeight="51.0" prefWidth="215.0" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="exitSalaryImage" fitHeight="26.0" fitWidth="32.0" layoutX="291.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/exit.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <Pane fx:id="byNamePane" prefHeight="200.0" prefWidth="200.0" styleClass="shadow" stylesheets="@../values/style.css" visible="false" AnchorPane.bottomAnchor="415.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="580.0" AnchorPane.topAnchor="176.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="56.0" prefWidth="320.0" styleClass="search-box">
+               <children>
+                  <TextField fx:id="playerNameSearchText" maxWidth="212.0" prefHeight="38.0" prefWidth="212.0" promptText="Input Player Name">
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="Cambria" size="15.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="text-line" />
+                     </styleClass>
+                  </TextField>
+                  <JFXButton fx:id="playerNameSearch" onAction="#playerNameSearchAction" prefHeight="27.0" prefWidth="66.0" styleClass="search-button" text="Submit" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin></JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <Pane fx:id="byCountryPane" layoutX="10.0" layoutY="166.0" prefHeight="200.0" prefWidth="200.0" styleClass="shadow" stylesheets="@../values/style.css" visible="false" AnchorPane.bottomAnchor="359.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="580.0" AnchorPane.topAnchor="232.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="56.0" prefWidth="320.0" styleClass="search-box">
+               <children>
+                  <TextField fx:id="playerCountrySearchText" maxWidth="212.0" prefHeight="38.0" prefWidth="212.0" promptText="Input Country Name">
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="Cambria" size="15.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="text-line" />
+                     </styleClass>
+                  </TextField>
+                  <JFXButton fx:id="playerCountrySearch" onAction="#playerCountrySearchAction" prefHeight="27.0" prefWidth="66.0" styleClass="search-button" text="Submit" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <Pane fx:id="byPositionPane" layoutX="10.0" layoutY="222.0" prefHeight="200.0" prefWidth="200.0" styleClass="shadow" stylesheets="@../values/style.css" visible="false" AnchorPane.bottomAnchor="303.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="580.0" AnchorPane.topAnchor="288.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="56.0" prefWidth="320.0" styleClass="search-box">
+               <children>
+                  <TextField fx:id="playerPositionSearchText" maxWidth="212.0" prefHeight="38.0" prefWidth="212.0" promptText="Input Position">
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="Cambria" size="15.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="text-line" />
+                     </styleClass>
+                  </TextField>
+                  <JFXButton fx:id="playerPositionSearch" onAction="#playerPositionSearchAction" prefHeight="27.0" prefWidth="66.0" styleClass="search-button" text="Submit" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin></JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <Pane fx:id="bySalaryRangePane" layoutX="10.0" layoutY="278.0" prefHeight="200.0" prefWidth="200.0" styleClass="shadow" stylesheets="@../values/style.css" visible="false" AnchorPane.bottomAnchor="247.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="580.0" AnchorPane.topAnchor="344.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="56.0" prefWidth="320.0" styleClass="search-box">
+               <children>
+                  <TextField fx:id="upperBoundText" prefHeight="40.0" prefWidth="110.0" promptText="Upper bound">
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="Cambria" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="text-line" />
+                     </styleClass>
+                  </TextField>
+                  <TextField fx:id="lowerBoundText" layoutX="95.0" layoutY="17.0" maxWidth="212.0" prefHeight="40.0" prefWidth="104.0" promptText="Lower bound">
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="Cambria" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="3.0" />
+                     </HBox.margin>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="text-line" />
+                     </styleClass>
+                  </TextField>
+                  <JFXButton fx:id="playerSalaryRangeSearch" onAction="#playerSalaryRangeSearchAction" prefHeight="27.0" prefWidth="66.0" styleClass="search-button" text="Submit" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin></JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <Pane fx:id="tablePane" prefHeight="200.0" prefWidth="256.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="230.0">
+         <children>
+            <TableView fx:id="resultTable" blendMode="SRC_ATOP" fixedCellSize="30.0" prefHeight="200.0" prefWidth="230.0">
+              <columns>
+                <TableColumn fx:id="countryCol" prefWidth="151.2000274658203" text="Country" />
+                <TableColumn fx:id="countCol" text="Count" />
+              </columns>
+               <effect>
+                  <InnerShadow>
+                     <color>
+                        <Color red="0.031578946858644485" green="0.030994152650237083" blue="0.030994152650237083" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+            </TableView>
+            <ImageView fx:id="exitResultTable" fitHeight="26.0" fitWidth="26.0" layoutX="230.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/exit.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+   <stylesheets>
+      <URL value="@../values/style.css" />
+      <URL value="@../values/anotherStyle.css" />
+   </stylesheets>
+</AnchorPane>
